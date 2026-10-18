@@ -9,6 +9,9 @@
   --accent-soft: #e9eeff;
   --navy: #0b1633;
   --navy-soft: #162c5c;
+  --venture-bg: #060f1c;
+  --venture-gold: #f2c14e;
+  --venture-orange: #f07a2b;
   --radius-sm: 14px;
   --radius-md: 20px;
   --radius-lg: 30px;
@@ -527,6 +530,7 @@ h3 {
   border-radius: 999px;
   font-size: 0.76rem;
   font-weight: 700;
+  white-space: nowrap;
 }
 
 .project-summary {
@@ -579,6 +583,85 @@ h3 {
   display: block;
   margin-bottom: 6px;
   font-size: 1.35rem;
+}
+
+/* Tipoff Fantasy venture card, styled with the product's own navy, gold, and orange */
+.project-card-venture {
+  margin-top: 24px;
+  color: #fff;
+  background:
+    radial-gradient(circle at 92% 0%, rgba(240, 122, 43, 0.18), transparent 34%),
+    radial-gradient(circle at 0% 100%, rgba(49, 87, 213, 0.22), transparent 40%),
+    linear-gradient(150deg, var(--venture-bg) 0%, #0f2240 100%);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: var(--shadow-lg);
+}
+
+.eyebrow-gold {
+  color: var(--venture-gold);
+  text-shadow: none;
+}
+
+.project-badge-venture {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--venture-bg);
+  background: var(--venture-gold);
+}
+
+.project-badge-venture::before {
+  content: "";
+  width: 8px;
+  height: 8px;
+  background: var(--venture-orange);
+  border-radius: 50%;
+}
+
+.project-card-venture .project-summary {
+  color: #c6d2e8;
+}
+
+.project-card-venture .project-column,
+.project-card-venture .project-outcomes > div {
+  background: rgba(255, 255, 255, 0.05);
+  border-color: rgba(255, 255, 255, 0.12);
+}
+
+.project-card-venture .project-label {
+  color: var(--venture-gold);
+}
+
+.project-card-venture .project-column p,
+.project-card-venture .project-outcomes span {
+  color: #b9c6df;
+}
+
+.project-card-venture .project-outcomes strong {
+  color: #fff;
+}
+
+.project-links {
+  margin-top: 28px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+}
+
+.button-venture {
+  color: var(--venture-bg);
+  background: var(--venture-gold);
+  box-shadow: 0 14px 28px rgba(242, 193, 78, 0.22);
+}
+
+.button-venture:hover {
+  background: #f6cf6e;
+}
+
+.button-venture-outline {
+  color: #fff;
+  background: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.4);
 }
 
 .skills-grid {
@@ -927,7 +1010,8 @@ h3 {
   }
 
   .hero-actions,
-  .contact-actions {
+  .contact-actions,
+  .project-links {
     flex-direction: column;
   }
 
